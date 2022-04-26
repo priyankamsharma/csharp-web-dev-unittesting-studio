@@ -28,6 +28,10 @@ namespace BalancedBracketsNS
             int brackets = 0;
             foreach (char ch in str.ToCharArray())
             {
+                if (ch == ']' && brackets == 0)//check if closed bracket before open
+                {
+                    return false;
+                }
                 if (ch == '[')
                 {
                     brackets++;
